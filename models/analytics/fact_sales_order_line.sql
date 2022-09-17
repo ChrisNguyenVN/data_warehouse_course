@@ -12,7 +12,7 @@ Yêu cầu #0101:
 
 #}
 
-
+-- note cá nhân: không nên đặt ; ở cuối câu query do dbt sẽ bọc bắng những câu lệnh khác có chứa ;
 SELECT 
   order_line_id as sales_order_line_id,
   quantity,
