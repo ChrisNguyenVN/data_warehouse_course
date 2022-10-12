@@ -11,7 +11,7 @@ WITH stg_dim_supplier_category__source AS (
 
 , stg_dim_supplier_category__cast AS (
   SELECT 
-    CAST(supplier_category_id AS INT64) AS supplier_category_id
+    CAST(supplier_category_id AS INTEGER) AS supplier_category_id
     , CAST(supplier_category_name AS STRING) AS supplier_category_name
   FROM stg_dim_supplier_category__rename
 )
