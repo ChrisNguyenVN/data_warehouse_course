@@ -8,6 +8,7 @@ with fact_sales__order_lines as (
   , quantity as quantity
   , unit_price as unit_price
   , quantity * unit_price AS gross_amount
+  , order_date
   from fact_sales__order_lines
 )
 
@@ -17,6 +18,7 @@ SELECT
   , CAST(product_id AS INT64) AS product_id
   , CAST(quantity AS NUMERIC) as quantity
   , CAST(unit_price AS NUMERIC) as unit_price
+  , CAST(order_date AS TIMESTAMP) as order_date
 FROM fact_sales_order_lines__renamed_column
 )
 
@@ -32,5 +34,6 @@ select
   product_id,
   quantity,
   unit_price,
-  gross_amount
+  gross_amount,
+  order_date
 from fact_sales_order_lines__calculated

@@ -12,7 +12,7 @@ WITH fact_inventory_transaction__source AS (
     , supplier_id
     , purchase_order_id
     , transaction_occurred_when
-    , quantity as quanity_on_hand
+    , quantity
     , last_edited_when
   FROM fact_inventory_transaction__source
 )
@@ -27,7 +27,7 @@ WITH fact_inventory_transaction__source AS (
     , CAST(supplier_id AS INT64) AS supplier_id
     , CAST(purchase_order_id AS INT64) AS purchase_order_id 
     , CAST(transaction_occurred_when AS TIMESTAMP) AS transaction_occurred_when 
-    , CAST(quanity_on_hand AS INT64) AS quanity_on_hand 
+    , CAST(quantity AS INT64) AS quantity
     , CAST(last_edited_when AS TIMESTAMP) AS last_edited_when 
   FROM fact_inventory_transaction__rename
 )
@@ -41,7 +41,7 @@ SELECT
     , supplier_id
     , purchase_order_id
     , transaction_occurred_when
-    , quanity_on_hand
+    , quantity
     , last_edited_when
 FROM fact_inventory_transaction__cast
 
